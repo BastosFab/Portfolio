@@ -1,29 +1,13 @@
 import React, { Suspense } from 'react'
-import Experience from './Components/Experience.jsx'
+import ExperienceDesktop from './Components/ExperienceDesktop.jsx'
+import ExperienceMobile from './Components/ExperienceMobile.jsx'
 import { Canvas } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
+import { isDesktop } from 'react-device-detect'
 import './style.css'
 
-// const root = ReactDOM.createRoot(document.querySelector('#root'))
-
-// root.render(
-//   <Canvas
-//     camera={ {
-//       fov: 45,
-//       near: 0.1,
-//       far: 2000,
-//       position: [ -3, 1.5, 4 ]
-//     } }
-//     width={ window.innerWidth }
-//     height={ window.innerHeight }
-//   >
-//     <Suspense fallback={ null }>
-//       <Experience />
-//     </Suspense>
-//   </Canvas>
-// )
-
 function Index() {
+
   return (
     <>
         <Canvas
@@ -37,7 +21,7 @@ function Index() {
           height={ window.innerHeight }
         >
           <Suspense fallback={ null }>
-            <Experience />
+            {isDesktop ? <ExperienceDesktop /> : <ExperienceMobile />}
           </Suspense>
         </Canvas>
         <Loader />
