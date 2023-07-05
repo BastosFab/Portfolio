@@ -21,7 +21,8 @@ function Index() {
           height={ window.innerHeight }
         >
           <Suspense fallback={ null }>
-            {isDesktop ? <ExperienceDesktop /> : <ExperienceMobile />}
+            {/* {isDesktop ? <ExperienceDesktop /> : <ExperienceMobile />} */}
+            <ExperienceDesktop />
           </Suspense>
         </Canvas>
         <Loader />
