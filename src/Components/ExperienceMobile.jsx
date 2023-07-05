@@ -88,7 +88,7 @@ function ExperienceMobile () {
                 distanceFactor={ HTML.Distance}
                 position={[HTML.PositionX, HTML.PositionY, HTML.PositionZ]}
               >
-              <iframe src='/src/Website/ConnectionWebsite.html' style={{width: HTML.Width, height: HTML.Height, borderRadius: 60+'px'}} />
+              <iframe src='/src/html/ConnectionWebsite.html' style={{width: HTML.Width, height: HTML.Height, borderRadius: 60+'px'}} />
             </Html>
           </primitive>
         </Float>
