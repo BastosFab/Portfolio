@@ -1,5 +1,6 @@
 import { ContactShadows, Float, Html, PresentationControls, useGLTF } from '@react-three/drei'
 import { useControls } from 'leva';
+import { isIOS } from 'react-device-detect';
 
 function ExperienceDesktop()
 {
@@ -31,13 +32,20 @@ function ExperienceDesktop()
 
   const colors = useControls('Colors', {
     Background: '#241A1A',
-    Screen: '#FFFFFF'
+    AreaLight: '#FFFFFF'
   });
   const Model = useControls('Model', {
     Scale: { value: 1, min: 0, max: 2, step: 0.01 },
     PositionX: { value: 0.25, min: -2, max: 2, step: 0.01 },
     PositionY: { value: -1.2, min: -2, max: 2, step: 0.01 },
   });
+
+  let positionY = 0;
+  if (isIOS) {
+    positionY = 1.38;
+  } else {
+    positionY = 1.53;
+  }
 
   return <>
 
@@ -58,7 +66,7 @@ function ExperienceDesktop()
             width={ 2.5 }
             height={ 1.65 }
             intensity={ 65 }
-            color={ colors.Screen }
+            color={ colors.AreaLight }
             rotation={[ 0.1, Math.PI, 0 ]}
             position={[ 0, 0.55, -1.15 ]}
           />
@@ -72,10 +80,10 @@ function ExperienceDesktop()
               transform
               wrapperClass='htmlScreen'
               distanceFactor={ 1.17}
-              position={[ 0, 1.53, -1.4 ]}
+              position={[ 0, positionY, -1.4 ]}
               rotation-x={[ -0.256 ]}
               >
-              <iframe src='../html/ConnectionWebsite.html' />
+              <iframe src='../html/ConnectionWebsiteDesktop.html' />
             </Html>
           </primitive>
         </Float>

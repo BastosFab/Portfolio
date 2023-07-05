@@ -1,12 +1,20 @@
 import { ContactShadows, Float, Html, PresentationControls, useGLTF } from "@react-three/drei"
 import { folder, useControls } from "leva";
+import { isIOS } from "react-device-detect";
 
 function ExperienceMobile () {
+
+    if (isIOS) {
+        console.log(isIOS)
+    } else {
+        console.log(isIOS)
+    }
+
 
     const mobile = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/iphone-x/model.gltf');
 
     const colors = useControls('Colors', {
-        Background: '#241A1A',
+        Background: '#dbdbdb',
     }, {collapsed: true});
     const Model = useControls('Model', {
     Scale: { value: 0.84, min: 0, max: 2, step: 0.01 },
@@ -14,8 +22,8 @@ function ExperienceMobile () {
     PositionY: { value: -1.2, min: -2, max: 2, step: 0.01 },
     }, {collapsed: true});
     const Polar = useControls('Polar', {
-    Value1: { value: -0.4, min: -2, max: 2, step: 0.01 },
-    Value2: { value: 0.2, min: -2, max: 2, step: 0.01 },
+    Value1: { value: -0.8, min: -2, max: 2, step: 0.01 },
+    Value2: { value: -0.3, min: -2, max: 2, step: 0.01 },
     }, {collapsed: true});
     const Azimuth = useControls('Azimuth', {
     Value1: { value: -1.3, min: -2, max: 2, step: 0.01 },
@@ -38,20 +46,41 @@ function ExperienceMobile () {
         }),
     }, {collapsed: true})
     const HTML = useControls('HTML', {
-        Distance: { value: 1.17, min: -10, max: 10, step: 0.01 },
-        'Position': folder({ 
-            PositionX: { value: 0.165, min: -10, max: 10, step: 0.01 },
-            PositionY: { value: 1.33, min: -10, max: 10, step: 0.01 },
-            PositionZ: { value: 0.08, min: -10, max: 10, step: 0.01 }
-        }),
-        'Rotation': folder({ 
-            RotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-            RotationY: { value: 2.61, min: -10, max: 10, step: 0.01 },
-            RotationZ: { value: -3.1, min: -10, max: 10, step: 0.01 },
-        }),
+        // Distance: { value: 1.17, min: -10, max: 10, step: 0.01 },
+        // 'Position': folder({ 
+        //     PositionX: { value: 0.165, min: -10, max: 10, step: 0.01 },
+        //     PositionY: { value: 1.33, min: -10, max: 10, step: 0.01 },
+        //     PositionZ: { value: 0.08, min: -10, max: 10, step: 0.01 }
+        // }),
+        // 'Rotation': folder({ 
+        //     RotationX: { value: 0, min: -10, max: 10, step: 0.01 },
+        //     RotationY: { value: 2.61, min: -10, max: 10, step: 0.01 },
+        //     RotationZ: { value: -3.1, min: -10, max: 10, step: 0.01 },
+        // }),
         Width: { value: 515 },
         Height: { value: 1100 },
     }, {collapsed: true})
+
+    let distance = 0;
+    let x = 0;
+    let y = 0;
+    let z = 0;
+    let position = [x, y, z]
+    if (isIOS) {
+        // distance = 1.18;
+        // position.x = 0.05;
+        // position.y = 1.1;
+        // position.z = -0.098;
+        distance = 1.18;
+        position.x = 0.15;
+        position.y = 1.12;
+        position.z = 0.08;
+    } else {
+        distance = 1.17;
+        position.x = 0.165;
+        position.y = 1.33;
+        position.z = 0.08;
+    }
 
     return <>
 
@@ -85,10 +114,10 @@ function ExperienceMobile () {
             <Html
                 transform
                 wrapperClass='htmlScreen'
-                distanceFactor={ HTML.Distance}
-                position={[HTML.PositionX, HTML.PositionY, HTML.PositionZ]}
+                distanceFactor={ distance }
+                position={[position.x, position.y, position.z]}
               >
-              <iframe src='../html/ConnectionWebsite.html' style={{width: HTML.Width, height: HTML.Height, borderRadius: 60+'px'}} />
+              <iframe src='../html/ConnectionWebsiteMobile.html' style={{width: HTML.Width, height: HTML.Height, borderRadius: 60+'px'}} />
             </Html>
           </primitive>
         </Float>
