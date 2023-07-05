@@ -10,6 +10,10 @@ body,
     background: #141414;
 }
 
+#root > div:first-child {
+  touch-action: none;
+}
+
 .container {
   width: 100%;
   height: 100%;
