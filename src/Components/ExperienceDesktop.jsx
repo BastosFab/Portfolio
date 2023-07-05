@@ -75,7 +75,7 @@ function ExperienceDesktop()
               position={[ 0, 1.53, -1.4 ]}
               rotation-x={[ -0.256 ]}
               >
-              <iframe src='/src/Website/ConnectionWebsite.html' />
+              <iframe src='/src/html/ConnectionWebsite.html' />
             </Html>
           </primitive>
         </Float>
