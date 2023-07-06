@@ -1,9 +1,7 @@
 import React, { Suspense } from 'react'
 import ExperienceDesktop from './Components/ExperienceDesktop.jsx'
-import ExperienceMobile from './Components/ExperienceMobile.jsx'
 import { Canvas } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
-import { isDesktop } from 'react-device-detect'
 import './style.css'
 
 function Index() {
