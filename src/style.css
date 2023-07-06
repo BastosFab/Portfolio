@@ -1,3 +1,6 @@
+@import '../public/scss/ConnectionWebsite.scss';
+@import '../public/scss/HomeWebsite.scss';
+
 html,
 body,
 #root
