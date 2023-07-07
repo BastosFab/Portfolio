@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import ExperienceDesktop from './Components/ExperienceDesktop.jsx'
 import { Canvas } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
-import './style.css'
+import './style.scss'
 
 function Index() {
 
