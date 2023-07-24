@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "ClashDisplay-Variable";
+  src: url("../assets/fonts/clash-display/ClashDisplay-Variable.ttf") format("truetype");
+  font-weight: 200 300 400 700;
+  font-display: swap;
+  font-style: normal;
+}
 html {
   height: 100%;
   width: 100%;
@@ -5,57 +12,68 @@ html {
 }
 
 body {
-  background-color: #141414;
+  background-color: #000000;
   height: 100%;
   width: 100%;
   margin: 0;
-}
-body .container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "ClashDisplay-Variable";
+}
+body .emoji-container {
+  width: 450px;
+  height: 450px;
+  position: fixed;
+  top: -10px;
+  right: -60px;
+  transform: rotate(-12deg);
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  background-color: #5A4FF5;
+}
+body .emoji-container .emoji-img {
+  width: 100%;
   height: 100%;
-}
-body .container > h1 {
-  color: #ffffff;
-  font-family: "Roboto";
-  font-weight: 300;
-  font-size: 6.5vw;
-}
-body .container .profile-container {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-body .container .profile-container .profile {
-  cursor: pointer;
-}
-body .container .profile-container .profile > div > a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
-body .container .profile-container .profile > div > a .avatar-container .avatar-img {
-  background-image: url("../assets/img/profile.jpeg");
-  max-width: 350px;
-  max-height: 350px;
-  min-width: 150px;
-  min-height: 150px;
-  background-repeat: no-repeat;
+  background-image: url("../assets/img/emoji-fabien.png");
   background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
-  border: none;
-  border-radius: 4px;
 }
-body .container .profile-container .profile > div > a .profile-name {
-  color: #808080;
-  font-family: "Roboto";
-  font-weight: 300;
-  font-size: 2.3vw;
-  margin: 10px 0;
+body .title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 7.5vw;
+  text-align: center;
+  position: fixed;
+  transform: rotate(15deg);
+  bottom: 0;
+  left: 50px;
+  background-color: #8A6CE3;
+  border-radius: 70% 30% 73% 27%/24% 26% 74% 76%;
+}
+body .start {
+  width: 350px;
+  height: 250px;
+  background-color: #D811D8;
+  border-radius: 34% 66% 64% 36%/35% 50% 50% 65%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, -50%);
+}
+body .start > button {
+  font-size: 9.5vw;
+  width: 100%;
+  height: 100%;
+  font-family: "ClashDisplay-Variable";
+  font-weight: 700;
+  border: none;
+  padding: 20px 40px;
+  background-color: transparent;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=ConnectionWebsite.css.map */
