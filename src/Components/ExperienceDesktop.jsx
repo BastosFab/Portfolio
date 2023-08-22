@@ -1,9 +1,25 @@
-import { ContactShadows, Float, Html, PresentationControls, useGLTF } from '@react-three/drei'
+import { Bounds, ContactShadows, Float, Html, PresentationControls, useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber';
 import { useControls } from 'leva';
+import { useRef, useState } from 'react';
 import { isIOS } from 'react-device-detect';
+import * as THREE from 'three';
 
 function ExperienceDesktop()
 {
+  // const [clicked, setClicked] = useState(false);
+  // const htmlScreenRef = useRef();
+  // const vec = new THREE.Vector3();
+
+  // useFrame(state => {
+  //   if (clicked) {
+  //     console.log(state)
+  //     state.camera.position.z = 1.6;
+  //     state.camera.position.y = 1.45;
+  //     state.camera.position.x = -1.25;
+  //   }
+  //   return
+  // })
 
   let htmlScreen = null;
   
@@ -35,9 +51,9 @@ function ExperienceDesktop()
     AreaLight: '#FFFFFF'
   });
   const Model = useControls('Model', {
-    Scale: { value: 1, min: 0, max: 2, step: 0.01 },
-    PositionX: { value: 0.25, min: -2, max: 2, step: 0.01 },
-    PositionY: { value: -1.2, min: -2, max: 2, step: 0.01 },
+    Scale: { value: 1.4, min: 0, max: 2, step: 0.01 },
+    PositionX: { value: 0.75, min: -2, max: 2, step: 0.01 },
+    PositionY: { value: -2, min: -4, max: 4, step: 0.01 },
   });
 
   let positionY = 0;
@@ -55,13 +71,13 @@ function ExperienceDesktop()
 
       <PresentationControls
         global
-        rotation={[ 0.13, 0.1, 0 ]}
+        rotation={[ 0.1, -0.3, 0 ]}
         polar={[ -0.4, 0.2 ]}
         azimuth={[ -1.3, 0.75 ]}
         config={{ mass: 2, tension: 400 }}
         snap={{ mass: 4, tension: 400 }}
       >
-        <Float rotationIntensity={ 0.4 }>
+        {/* <Float rotationIntensity={ 0.4 }> */}
           <rectAreaLight 
             width={ 2.5 }
             height={ 1.65 }
@@ -75,6 +91,8 @@ function ExperienceDesktop()
             position-y={ Model.PositionY }
             position-x={ Model.PositionX }
             scale={ Model.Scale }
+            // ref={htmlScreenRef}
+            // onClick={() => setClicked(!clicked)}
           >
             <Html
               transform
@@ -83,10 +101,11 @@ function ExperienceDesktop()
               position={[ 0, positionY, -1.4 ]}
               rotation-x={[ -0.256 ]}
               >
-              <iframe src='../html/ConnectionWebsiteDesktop.html' />
+              <iframe src='../html/ConnectionWebsiteDesktop.html'/>
+              {/* <iframe src='../html/HomeWebsite.html'/> */}
             </Html>
           </primitive>
-        </Float>
+        {/* </Float> */}
       </PresentationControls>
 
       <ContactShadows 

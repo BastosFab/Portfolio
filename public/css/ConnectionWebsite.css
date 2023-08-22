@@ -61,7 +61,7 @@ body .start {
   background-color: #00C39A;
   border-radius: 60px;
 }
-body .start > button {
+body .start > a {
   text-transform: uppercase;
   font-size: 7vw;
   line-height: 1.1;
@@ -73,6 +73,7 @@ body .start > button {
   padding: 20px 40px;
   background-color: transparent;
   color: #FFFFFF;
+  text-decoration: none;
   cursor: pointer;
 }
 body .text-background {
