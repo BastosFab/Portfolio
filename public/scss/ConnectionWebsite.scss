@@ -17,20 +17,16 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: 'ClashDisplay-Variable';
+    position: relative;
 
     .emoji-container {
-        width: 450px;
-        height: 450px;
+        width: 400px;
+        height: 400px;
         position: fixed;
-        top: -10px;
-        right: -60px;
-        transform: rotate(-12deg);
-        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-        background-color: #5A4FF5;
+        top: 110px;
+        right: 75px;
+        z-index: 1;
 
         .emoji-img {
             width: 100%;
@@ -45,30 +41,35 @@ body {
     .title {
         color: #ffffff;
         font-weight: 700;
-        font-size: 7.5vw;
-        text-align: center;
-        position: fixed;
-        transform: rotate(15deg);
-        bottom: 0;
-        left: 50px;
-        background-color: #8A6CE3;
-        border-radius: 70% 30% 73% 27% / 24% 26% 74% 76% ;
+        font-size: 14vw;
+        line-height: 0.8;
+        text-align: start;
+        margin: 0;
+        text-transform: uppercase;
+
+        > span {
+            font-size: 11vw;
+            -webkit-text-stroke: 2px #FFFFFF;
+            color: #000000;
+        }
     }
 
     .start {
-        width: 350px;
-        height: 250px;
-        background-color: #D811D8;
-        border-radius: 34% 66% 64% 36% / 35% 50% 50% 65%;
+        width: 600px;
+        height: 190px;
         display: flex;
         justify-content: center;
         position: fixed;
-        top: 50%;
+        bottom: 15px;
         left: 50%;
-        transform: translate(-70%, -50%);
+        transform: translate(-50%);
+        background-color: #00C39A;
+        border-radius: 60px;
         
         > button {
-            font-size: 9.5vw;
+            text-transform: uppercase;
+            font-size: 7vw;
+            line-height: 1.1;
             width: 100%;
             height: 100%;
             font-family: 'ClashDisplay-Variable';
@@ -79,5 +80,19 @@ body {
             color: #FFFFFF;
             cursor: pointer;
         }
+    }
+
+    .text-background {
+        transform: rotate(-15deg);
+        opacity: .2;
+        color: #000000;
+        -webkit-text-stroke: 2px #FFFFFF;
+        font-size: 4.2vw;
+        text-transform: uppercase;
+        font-weight: 900;
+        position: fixed;
+        bottom: -160px;
+        left: -50px;
+        z-index: -1;
     }
 }
