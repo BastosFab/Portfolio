@@ -20,7 +20,7 @@
     </div>
     <h1 class="title"><span>Vandenberghe</span><br />Fabien</h1>
     <div class="start">
-      <button>Commencer<br/>Maintenant</button>
+      <a href="./HomeWebsite.html">Commencer<br/>Maintenant</a>
     </div>
     <div class="text-background">
       DéveloppeurDéveloppeurDéveloppeurDéveloppeur<br />
@@ -33,4 +33,14 @@
       DéveloppeurDéveloppeurDéveloppeurDéveloppeur<br />
       DéveloppeurDéveloppeurDéveloppeurDéveloppeur<br /></div>
   </body>
+
+  <script>
+    const button = document.body.querySelector("button");
+    
+    function onClick() {
+      button.addEventListener("click", () => {
+        console.log('click')
+      });
+    }
+  </script>
 </html>
