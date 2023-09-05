@@ -59,11 +59,12 @@ body .experiences > p {
   font-size: 4.5vw;
   font-weight: 900;
   text-align: center;
-  line-height: 28px;
+  line-height: 23px;
 }
 body .experiences > p > span {
   font-size: 1.5vw;
   font-weight: 100;
+  line-height: 0;
 }
 body .experience-one {
   grid-area: 4/1/6/3;
@@ -116,33 +117,39 @@ body .projects .projects-list .project-one {
   position: relative;
 }
 body .projects .projects-list .project-one .project-one-img {
-  background-color: #00C39A;
+  background-image: url("../assets/img/Firecheck-small.png");
   width: 100%;
   height: 100%;
   border-radius: 15px;
   transition: 0.3s;
+  background-position: center;
+  background-size: cover;
 }
 body .projects .projects-list .project-two {
   grid-area: 1/2/2/3;
   position: relative;
 }
 body .projects .projects-list .project-two .project-two-img {
-  background-color: #8A6CE3;
+  background-image: url("../assets/img/Portfolio-small.png");
   width: 100%;
   height: 100%;
   border-radius: 15px;
   transition: 0.3s;
+  background-position: center;
+  background-size: cover;
 }
 body .projects .projects-list .project-three {
   grid-area: 1/3/2/4;
   position: relative;
 }
 body .projects .projects-list .project-three .project-three-img {
-  background-color: #D811D8;
+  background-image: url("../assets/img/Facetracking-small.png");
   width: 100%;
   height: 100%;
   border-radius: 15px;
   transition: 0.3s;
+  background-position: center;
+  background-size: cover;
 }
 body .projects .projects-list .project-one:hover .project-one-img,
 body .projects .projects-list .project-two:hover .project-two-img,
@@ -167,10 +174,12 @@ body .projects .projects-list .hover {
   transition: 0.3s;
   opacity: 0;
 }
-body .projects .projects-list .hover > p {
+body .projects .projects-list .hover > a {
   font-size: 1.4rem;
   font-weight: 600;
   color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
 }
 body .nav {
   grid-area: 1/7/2/13;
@@ -198,7 +207,7 @@ body .nav .buttons .language {
   border-radius: 50%;
   font-weight: 900;
   font-family: "ClashDisplay-Variable";
-  cursor: pointer;
+  opacity: 0.5;
 }
 body .nav .buttons > label {
   width: 70px;
