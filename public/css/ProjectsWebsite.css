@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "ClashDisplay-Variable";
+  src: url("../assets/fonts/clash-display/ClashDisplay-Variable.ttf") format("truetype");
+  font-weight: 200 300 400 700;
+  font-display: swap;
+  font-style: normal;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "ClashDisplay-Variable";
+}
+html .slider-top,
+body .slider-top {
+  margin-top: 20px;
+}
+html .slider-bottom,
+body .slider-bottom {
+  margin-bottom: 20px;
+}
+html .slider,
+body .slider {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 10%;
+  overflow: hidden;
+  z-index: 1;
+  border: 4px solid #FFFFFF;
+}
+html .slider .slider-title,
+body .slider .slider-title {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  transition: all 1s ease;
+}
+html .slider .slider-title > div,
+body .slider .slider-title > div {
+  display: flex;
+  align-items: center;
+  animation: scrollText 33s infinite linear;
+}
+html .slider .slider-title > div > h2,
+body .slider .slider-title > div > h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 3.6rem;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+}
+html .slider .slider-title > div > h2 .dot,
+body .slider .slider-title > div > h2 .dot {
+  font-size: 2rem;
+}
+html .projects-content,
+body .projects-content {
+  background-color: #5A4FF5;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  color: #FFFFFF;
+}
+html .projects-content .projects-title,
+body .projects-content .projects-title {
+  display: flex;
+  margin-bottom: 20px;
+}
+html .projects-content .projects-title .left,
+body .projects-content .projects-title .left {
+  display: flex;
+  width: 50%;
+}
+html .projects-content .projects-title .left .btn-back,
+body .projects-content .projects-title .left .btn-back {
+  margin: auto 20px auto 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+html .projects-content .projects-title .left .btn-back > a,
+body .projects-content .projects-title .left .btn-back > a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+html .projects-content .projects-title .left .title,
+body .projects-content .projects-title .left .title {
+  font-size: 3.5rem;
+  line-height: 3.5rem;
+  margin: 0;
+}
+html .projects-content .projects-title .description,
+body .projects-content .projects-title .description {
+  width: 40%;
+  font-size: 1.2rem;
+}
+html .projects-list .large,
+body .projects-list .large {
+  margin: 20px 0;
+}
+html .projects-list .large .large-img,
+body .projects-list .large .large-img {
+  height: 300px;
+  position: relative;
+}
+html .projects-list .large .large-img > img,
+body .projects-list .large .large-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+html .projects-list .display-small,
+body .projects-list .display-small {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 40px;
+}
+html .projects-list .display-small .small,
+body .projects-list .display-small .small {
+  width: 50%;
+}
+html .projects-list .display-small .small .small-img,
+body .projects-list .display-small .small .small-img {
+  height: 300px;
+  position: relative;
+}
+html .projects-list .display-small .small .small-img > img,
+body .projects-list .display-small .small .small-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px;
+}
+html .projects-list .project-one-img:hover > img,
+html .projects-list .small-img:hover > img,
+body .projects-list .project-one-img:hover > img,
+body .projects-list .small-img:hover > img {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+html .projects-list .large-img:hover .hover-project-one,
+html .projects-list .small-img:hover .hover-project-two,
+html .projects-list .small-img:hover .hover-project-three,
+body .projects-list .large-img:hover .hover-project-one,
+body .projects-list .small-img:hover .hover-project-two,
+body .projects-list .small-img:hover .hover-project-three {
+  opacity: 1;
+  transition: 0.3s;
+}
+html .projects-list .hover,
+body .projects-list .hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s;
+  opacity: 0;
+}
+html .projects-list .hover > a,
+body .projects-list .hover > a {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+  text-shadow: 0px 0px 10px #000;
+}
+
+.project-infos {
+  display: flex;
+  flex-direction: column;
+}
+.project-infos .project-description {
+  display: flex;
+  margin-top: 2px;
+  column-gap: 20px;
+}
+.project-infos .project-description .project-links {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.project-infos .project-title {
+  margin: 0;
+  font-size: 2.5rem;
+  justify-content: space-between;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/*# sourceMappingURL=ProjectsWebsite.css.map */

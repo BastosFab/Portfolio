@@ -1,26 +1,9 @@
 import { Bounds, ContactShadows, Float, Html, PresentationControls, useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber';
 import { useControls } from 'leva';
-import { useRef, useState } from 'react';
 import { isIOS } from 'react-device-detect';
-import * as THREE from 'three';
 
 function ExperienceDesktop()
 {
-  // const [clicked, setClicked] = useState(false);
-  // const htmlScreenRef = useRef();
-  // const vec = new THREE.Vector3();
-
-  // useFrame(state => {
-  //   if (clicked) {
-  //     console.log(state)
-  //     state.camera.position.z = 1.6;
-  //     state.camera.position.y = 1.45;
-  //     state.camera.position.x = -1.25;
-  //   }
-  //   return
-  // })
-
   let htmlScreen = null;
   
   setTimeout(() => {
@@ -52,10 +35,10 @@ function ExperienceDesktop()
   });
   const Model = useControls('Model', {
     Scale: { value: 1.4, min: 0, max: 2, step: 0.01 },
-    PositionX: { value: 0.75, min: -2, max: 2, step: 0.01 },
+    PositionX: { value: 0.55, min: -2, max: 2, step: 0.01 },
     PositionY: { value: -2, min: -4, max: 4, step: 0.01 },
   });
-
+  
   let positionY = 0;
   if (isIOS) {
     positionY = 1.38;
@@ -90,6 +73,7 @@ function ExperienceDesktop()
             object={ computer.scene }
             position-y={ Model.PositionY }
             position-x={ Model.PositionX }
+            position-z={ 0.9 }
             scale={ Model.Scale }
             // ref={htmlScreenRef}
             // onClick={() => setClicked(!clicked)}
@@ -102,12 +86,11 @@ function ExperienceDesktop()
               rotation-x={[ -0.256 ]}
               >
               <iframe src='../html/ConnectionWebsiteDesktop.html'/>
-              {/* <iframe src='../html/HomeWebsite.html'/> */}
             </Html>
           </primitive>
         {/* </Float> */}
       </PresentationControls>
-
+      
       <ContactShadows 
         position-y={ -1.5 }
         opacity={ 0.5 }
@@ -116,124 +99,5 @@ function ExperienceDesktop()
       />
   </>
 }
-
-// class Experience3 extends Component {
-
-
-//   htmlScreen = createRef()
-//   toggleHtmlScreenDisplayTimeout = null;
-
-//   componentDidMount() {
-//     window.addEventListener('resize', this.handleResize.bind(this))
-//     console.log(this.htmlScreen)
-//   }
-
-//   componentWillUnmount() {
-//     window.removeEventListener('resize', this.handleResize.bind(this))
-//   }
-
-//   handleResize() {
-//     this.htmlScreen.current.style.display = 'none';
-
-//     if (this.toggleHtmlScreenDisplayTimeout) {
-//       clearTimeout(this.toggleHtmlScreenDisplayTimeout);
-//     }
-
-//     this.toggleHtmlScreenDisplayTimeout = setTimeout( () => {
-//       this.htmlScreen.current.style.display = 'block';
-//     }, 200)
-//   }
-
-//   render() {
-//     return (
-//       <>
-//         <h1 ref={this.htmlScreen}>Salut</h1>
-//       </>
-//     )
-//   }
-// }
-
-
-// class Experience extends Component {
-//   htmlScreen = createRef()
-//   toggleHtmlScreenDisplayTimeout = null;
-
-//   colors = useControls('Colors', {
-//     Background: '#241A1A',
-//     Screen: '#FFFFFF'
-//   });
-
-//   componentDidMount() {
-//     window.addEventListener('resize', this.handleResize.bind(this))
-//     console.log(this.htmlScreen)
-//   }
-
-//   componentWillUnmount() {
-//     window.removeEventListener('resize', this.handleResize.bind(this))
-//   }
-
-//   handleResize() {
-//     this.htmlScreen.current.style.display = 'none';
-
-//     if (this.toggleHtmlScreenDisplayTimeout) {
-//       clearTimeout(this.toggleHtmlScreenDisplayTimeout);
-//     }
-
-//     this.toggleHtmlScreenDisplayTimeout = setTimeout( () => {
-//       this.htmlScreen.current.style.display = 'block';
-//     }, 200)
-//   }
-
-//   render() {
-//     return <>
-
-//       <Environment preset='city' />
-
-//       <color attach="background" args={ [ colors.Background ] }/>
-
-//       <PresentationControls
-//         global
-//         rotation={[ 0.13, 0.1, 0 ]}
-//         polar={[ -0.4, 0.2 ]}
-//         azimuth={[ -1.3, 0.75 ]}
-//         config={{ mass: 2, tension: 400 }}
-//         snap={{ mass: 4, tension: 400 }}
-//       >
-//         <Float rotationIntensity={ 0.4 }>
-//           <rectAreaLight 
-//             width={ 2.5 }
-//             height={ 1.65 }
-//             intensity={ 65 }
-//             color={ colors.Screen }
-//             rotation={[ 0.1, Math.PI, 0 ]}
-//             position={[ 0, 0.55, -1.15 ]}
-//           />
-//           <primitive 
-//             object={ computer.scene }
-//             position-y={ -1.2 }
-//             position-x={ 0.25 }
-//           >
-//             <Html
-//               transform
-//               wrapperClass='htmlScreen'
-//               distanceFactor={ 1.17}
-//               position={[ 0, 1.53, -1.4 ]}
-//               rotation-x={[ -0.256 ]}
-//               >
-//               <iframe src='/src/Website/website.html' />
-//             </Html>
-//           </primitive>
-//         </Float>
-//       </PresentationControls>
-
-//       <ContactShadows 
-//         position-y={ -1.5 }
-//         opacity={ 0.5 }
-//         scale={ 5 }
-//         blur={ 2.1 }
-//       />
-//   </>
-//   }
-// }
 
 export default ExperienceDesktop;
