@@ -104,8 +104,6 @@ body {
     }
 
     .projects-list {
-        .project {
-        }
         .large {
             margin: 20px 0;
 
@@ -155,7 +153,9 @@ body {
 
         .large-img:hover .hover-project-one,
         .small-img:hover .hover-project-two,
-        .small-img:hover .hover-project-three {
+        .small-img:hover .hover-project-three,
+        .small-img:hover .hover-project-five,
+        .small-img:hover .hover-project-six {
             opacity: 1;
             transition: .3s;
         }

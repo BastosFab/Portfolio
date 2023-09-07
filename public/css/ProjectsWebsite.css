@@ -154,9 +154,13 @@ body .projects-list .small-img:hover > img {
 html .projects-list .large-img:hover .hover-project-one,
 html .projects-list .small-img:hover .hover-project-two,
 html .projects-list .small-img:hover .hover-project-three,
+html .projects-list .small-img:hover .hover-project-five,
+html .projects-list .small-img:hover .hover-project-six,
 body .projects-list .large-img:hover .hover-project-one,
 body .projects-list .small-img:hover .hover-project-two,
-body .projects-list .small-img:hover .hover-project-three {
+body .projects-list .small-img:hover .hover-project-three,
+body .projects-list .small-img:hover .hover-project-five,
+body .projects-list .small-img:hover .hover-project-six {
   opacity: 1;
   transition: 0.3s;
 }
